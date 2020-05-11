@@ -1,5 +1,6 @@
 var http = require('http');
 var url = require('url');
+var mode;
 http.createServer(function (req, res) {
   res.write(`
 <!DOCTYPE html>
@@ -38,16 +39,12 @@ http.createServer(function (req, res) {
 
   var q = url.parse(req.url, true).query;
   mode = q.mode;
-  if (q.mode == "development") {
-    res.end("Dev Mode");
-    setDevMode();
-  } else if (q.mode == "active") {
+  if (mode == "development") {
+    res.end("Dev Mode: Changes won't be saved.");
+  } else if (mode == "active") {
     res.end();
   } else {
     res.end("404 Error: Mode not defined or Invalid Mode");
   }
   
 }).listen(8080);
-function setDevMode() {
-  querySelectorAll(".modeEditable").setAttribute("contenteditable", "true");
-}
