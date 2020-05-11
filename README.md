@@ -1,5 +1,5 @@
-# FSNODE\
-## This is a repository for my repl.it project.\
+# FSNODE
+## This is a repository for my repl.it project.
 This project is written in Node.js, a server-side framework for JavaScript\
 Links:\
 [Node.js](https://nodejs.org/en/)\
